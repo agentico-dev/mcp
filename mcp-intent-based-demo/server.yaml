@@ -1,0 +1,56 @@
+apiVersion: agentico.dev/v1
+kind: Server
+metadata:
+  name: demo-mcp
+  labels:
+    environment: development
+    app: demo
+  description: Demo MCP Server instance
+  version: '1.0'
+  transport: stdio
+  capabilities:
+    - logging
+    - tools
+    # - monitoring
+    # - error-handling
+    # - security
+  annotations:
+    language:
+      name: typescript
+      version: '5.0'
+spec:
+  template:
+    metadata:
+      scope: local
+      labels:
+        app: demo
+        tier: backend
+        environment: development
+      version: '1.0'
+    spec:
+      tools:
+        - name: echo
+          description: >-
+            Utility tool that returns the exact input provided to it, useful for
+            testing communication flows, verifying data integrity, and debugging
+            request-response patterns in the demo environment. Supports various
+            data formats including text, JSON, and YAML.
+        - name: reverse
+          description: >-
+            Text manipulation tool that reverses the order of characters in the
+            input string. Handles Unicode characters correctly, preserves
+            whitespace positioning, and provides options for reversing at
+            different levels (character, word, or sentence) for demonstration
+            purposes.
+        - name: uppercase
+          description: >-
+            String transformation utility that converts all alphabetic
+            characters in the input to uppercase. Supports international
+            character sets with proper locale handling, preserves formatting and
+            non-alphabetic characters, and is optimized for processing large
+            text inputs efficiently.
+      prompts:
+        - name: system
+          content: You are a helpful assistant
+        - name: task
+          content: Process user requests

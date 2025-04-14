@@ -1,0 +1,66 @@
+{
+  "name": "mcp-intent-based-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "mcp",
+    "intent",
+    "engine",
+    "tool",
+    "ai",
+    "agent",
+    "Model Context Protocol",
+    "workflow",
+    "automation"
+  ],
+  "author": "Adrian Escutia",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ib-demo": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "package.json",
+    "mcp-server.png",
+    "LICENSE",
+    "agentico-logo.webp",
+    "server.yaml"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "buildup": "bunup",
+    "watch": "tsc --watch",
+    "prepublishOnly": "bunup && npm run build",
+    "publish:npm": "npm publish --access public",
+    "inspector": "npx @modelcontextprotocol/inspector@0.8.2 build/index.js"
+  },
+  "contributors": [
+    {
+      "name": "Adrian Escutia",
+      "url": "https://escutia.me/adrian"
+    },
+    {
+      "name": "La Rebelion Labs",
+      "url": "https://rebelion.la"
+    },
+    {
+      "name": "Intent Based Specs",
+      "url": "https://intent-based.ai"
+    },
+    {
+      "name": "MCP AI",
+      "url": "https://mcp.com.ai"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "bunup": "^0.3.76",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@agentico/mcp-intent-based": "file:../mcp-intent-based"
+  }
+}
