@@ -4,6 +4,8 @@ This is an early version of the MCP Intent-Based demo project. This project aims
 
 For more details check the `mcp-intent-based-demo` [README here](./mcp-intent-based-demo/README.md).
 
+![MCP Intent Based Server and Tools](./mcp-intent-server-diagram-v2.svg)
+
 ## Understanding the Intent-Based Manifest File
 
 The `server.yaml` file is the heart of the MCP Intent Based approach. It defines:

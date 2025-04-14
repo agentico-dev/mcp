@@ -1,0 +1,389 @@
+<svg viewBox="0 0 800 800" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="neonBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#0066ff" />
+    </linearGradient>
+    <linearGradient id="neonPurpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff00ff" />
+      <stop offset="100%" stop-color="#9900ff" />
+    </linearGradient>
+    <linearGradient id="neonGreenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff99" />
+      <stop offset="100%" stop-color="#00cc66" />
+    </linearGradient>
+    <linearGradient id="neonOrangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900" />
+      <stop offset="100%" stop-color="#ff3300" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Animated Pulse -->
+    <filter id="pulse" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        result="glow" />
+      <feBlend in="SourceGraphic" in2="glow" mode="normal" />
+    </filter>
+
+    <!-- Animation Definitions -->
+    <animate id="pulseAnim" attributeName="opacity" values="0.7;1;0.7" dur="2s"
+      repeatCount="indefinite" />
+
+    <!-- Define arrowhead marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff" />
+    </marker>
+  </defs>
+
+  <!-- Background with Grid -->
+  <rect width="800" height="800" fill="#0a0a20" />
+
+  <!-- Main Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#ffffff"
+    text-anchor="middle" filter="url(#glow)">
+    MCP Intent Based Server &amp; Tools
+  </text>
+
+  <!-- Central MCP Server Component -->
+  <g>
+    <rect x="300" y="100" width="200" height="120" rx="10" ry="10" fill="url(#neonBlueGradient)"
+      filter="url(#glow)" opacity="0.9">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" />
+    </rect>
+    <text x="400" y="140" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
+      text-anchor="middle">MCP Server</text>
+    <text x="400" y="170" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+      text-anchor="middle">Intent-Based Management</text>
+    <text x="400" y="190" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">server.yaml</text>
+  </g>
+
+  <!-- Intent-Based Management (Kubernetes) -->
+  <g transform="translate(90, 250)">
+    <rect x="0" y="0" width="180" height="100" rx="10" ry="10" fill="url(#neonPurpleGradient)"
+      filter="url(#glow)" opacity="0.85">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#ffffff"
+      text-anchor="middle">Kubernetes Model</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Manifest-Driven</text>
+    <text x="90" y="80" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Reconciliation Loop</text>
+
+    <!-- Kubernetes Logo Simplified -->
+    <!-- <path d="M30,40 L40,25 L50,40 L40,55 Z" fill="#ffffff" stroke="#aa00ff"
+      stroke-width="1.5" /> -->
+  </g>
+
+  <!-- Temporal Workflow - Repositioned -->
+  <g transform="translate(315, 250)">
+    <rect x="0" y="0" width="180" height="100" rx="10" ry="10" fill="url(#neonPurpleGradient)"
+      filter="url(#glow)" opacity="0.85">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.5s" repeatCount="indefinite" />
+    </rect>
+    <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#ffffff"
+      text-anchor="middle">Temporal Workflow</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">toolsPaths</text>
+    <text x="90" y="80" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Modular Organization</text>
+
+    <!-- Clock Icon Representing Temporal -->
+    <!-- <circle cx="50" cy="30" r="15" fill="none" stroke="#ffffff" stroke-width="2" />
+    <line x1="50" y1="30" x2="50" y2="20" stroke="#ffffff" stroke-width="2" />
+    <line x1="50" y1="30" x2="58" y2="35" stroke="#ffffff" stroke-width="2">
+      <animate attributeName="transform" attributeType="XML" type="rotate" from="0 50 30"
+        to="90 50 30" dur="10s" repeatCount="indefinite" />
+    </line> -->
+  </g>
+
+  <!-- Java Reflection - Redesigned as Rectangle instead of Circle -->
+  <g transform="translate(550, 250)">
+    <rect x="0" y="0" width="180" height="100" rx="10" ry="10" fill="url(#neonPurpleGradient)"
+      filter="url(#glow)" opacity="0.85">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.5s" repeatCount="indefinite" />
+    </rect>
+    <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#ffffff"
+      text-anchor="middle">Java-like Reflection</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Dynamic Interfaces</text>
+    <text x="90" y="80" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">&lt;T&gt; T create()</text>
+  </g>
+
+  <!-- Dynamic Tool Creation - Fixed Filled Circle -->
+  <g transform="translate(700, 200)">
+    <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
+      opacity="0.85">
+      <animate attributeName="r" values="48;52;48" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+      text-anchor="middle">Dynamic</text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+      text-anchor="middle">Tool Creation</text>
+
+    <!-- Tool Icons -->
+    <g transform="translate(-20, 20) scale(0.6)">
+      <path d="M0,0 L10,10 L0,20 L-10,10 Z" fill="#ffffff" >
+        <animate attributeName="opacity" values="1;0.9;1" dur="2s" repeatCount="indefinite" />
+      </path>
+      <path d="M20,0 L30,10 L20,20 L10,10 Z" fill="#ffffff" >
+        <animate attributeName="opacity" values="1;0.9;0.7;0.4;1" dur="2s" repeatCount="indefinite" />
+      </path>
+      <path d="M40,0 L50,10 L40,20 L30,10 Z" fill="#ffffff" >
+        <animate attributeName="opacity" values="1;0.8;0.6;0.2;1" dur="2s" repeatCount="indefinite" />
+      </path>
+      <path d="M60,0 L70,10 L60,20 L50,10 Z" fill="#ffffff">
+        <animate attributeName="opacity" values="1;0.6;0.4;0;1" dur="2s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+
+  <!-- Tools Output - Fixed Filled Circle -->
+  <g transform="translate(100, 200)">
+    <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
+      opacity="0.85">
+      <animate attributeName="r" values="48;52;48" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+      text-anchor="middle">Dynamic</text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+      text-anchor="middle">Tool Loading</text>
+
+    <!-- TypeScript Symbol -->
+    <!-- <text x="0" y="30" font-family="Courier, monospace" font-size="14" fill="#ffffff"
+      text-anchor="middle">.ts</text> -->
+  </g>
+
+  <!-- Connection Lines -->
+  <!-- From Server to Principles -->
+  <line x1="350" y1="220" x2="240" y2="250" stroke="url(#neonBlueGradient)" stroke-width="3"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="5s"
+      repeatCount="indefinite" />
+  </line>
+  <line x1="400" y1="220" x2="398" y2="250" stroke="url(#neonBlueGradient)" stroke-width="3"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="5s"
+      repeatCount="indefinite" />
+  </line>
+  <line x1="450" y1="220" x2="560" y2="250" stroke="url(#neonBlueGradient)" stroke-width="3"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="5s"
+      repeatCount="indefinite" />
+  </line>
+
+  <!-- Animated Paths with Moving Dots -->
+  <!-- Path from Dynamic Tool Loading to Server -->
+  <path d="M150,200 L300,170" id="toolLoadingPath" stroke="#0c6" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dasharray" values="2,4;4,2" dur="1.5s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Animated dot moving from Tool Loading to Server - One direction only -->
+  <circle r="5" fill="#00ffff" filter="url(#glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
+      <mpath xlink:href="#toolLoadingPath" />
+    </animateMotion>
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Second dot for continuous flow -->
+  <circle r="5" fill="#00ffff" filter="url(#glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s">
+      <mpath xlink:href="#toolLoadingPath" />
+    </animateMotion>
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Path from Dynamic Tool Creation to Server -->
+  <path d="M650,200 L500,170" id="toolCreationPath" stroke="#0c6" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dasharray" values="2,4;4,2" dur="1.5s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Animated dot moving from Tool Creation to Server - One direction only -->
+  <circle r="5" fill="#00ffff" filter="url(#glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s">
+      <mpath xlink:href="#toolCreationPath" />
+    </animateMotion>
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Second dot for continuous flow -->
+  <circle r="5" fill="#00ffff" filter="url(#glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="2s">
+      <mpath xlink:href="#toolCreationPath" />
+    </animateMotion>
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- From Temporal to Dynamic Tool Loading -->
+  <line x1="560" y1="350" x2="530" y2="350" stroke="url(#neonGreenGradient)" stroke-width="3"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="4s"
+      repeatCount="indefinite" />
+  </line>
+
+  <!-- From Java Reflection to Dynamic Tool Loading -->
+  <line x1="630" y1="380" x2="580" y2="380" stroke="url(#neonPurpleGradient)" stroke-width="3"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="4s"
+      repeatCount="indefinite" />
+  </line>
+
+  <!-- Data Flow Arrows -->
+  <g>
+    <!-- Manifest to Server -->
+    <path d="M150,200 L300,170" stroke="#0c6" stroke-width="2" marker-end="url(#arrowhead)"
+      filter="url(#glow)" opacity="0.4">
+      <animate attributeName="stroke-dashoffset" values="0;10" dur="1s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Tools to Server -->
+    <path d="M650,200 L500,170" stroke="#0c6" stroke-width="2" marker-end="url(#arrowhead)"
+      stroke-dasharray="5,3" filter="url(#glow)" opacity="0.4">
+      <animate attributeName="stroke-dashoffset" values="0;10" dur="1.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(20, 400)">
+    <rect x="0" y="0" width="15" height="15" fill="url(#neonBlueGradient)" />
+    <text x="25" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Core
+      Components</text>
+
+    <rect x="150" y="0" width="15" height="15" fill="url(#neonPurpleGradient)" />
+    <text x="175" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Principles</text>
+
+    <rect x="260" y="0" width="15" height="15" fill="url(#neonGreenGradient)" />
+    <text x="285" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Tools</text>
+  </g>
+
+  <!-- TypeScript Code Snippet -->
+  <!-- <g transform="translate(490, 400)">
+    <rect x="0" y="0" width="250" height="80" rx="5" ry="5" fill="#151530" stroke="#00ffff"
+      stroke-width="1" />
+    <text x="5" y="10" font-family="Courier, monospace" font-size="12" fill="#00ffff">export default const myToolFn = </text>
+    <text x="15" y="25" font-family="Courier, monospace" font-size="12" fill="#00ffff">(tool: Tool) =&gt; {</text>
+    <text x="25" y="40" font-family="Courier, monospace" font-size="12" fill="#00ffff"> // Tool
+      implementation</text>
+    <text x="10" y="55" font-family="Courier, monospace" font-size="12" fill="#00ffff">};</text>
+    <text x="10" y="70" font-family="Courier, monospace" font-size="12" fill="#00ffff"> export { myToolFn }</text>
+  </g> -->
+
+  <!-- Control Loop Diagram (Similar to attached) -->
+  <g transform="translate(400, 570) scale(0.7)">
+    <!-- Dashed Container Box -->
+    <rect x="-290" y="-85" width="580" height="360" fill="none" stroke="#ffffff" stroke-width="2"
+      stroke-dasharray="5,5" />
+
+    <!-- Desired State Box -->
+    <rect x="-270" y="50" width="180" height="80" rx="5" ry="5" fill="url(#neonBlueGradient)"
+      opacity="0.9" />
+    <text x="-180" y="95" font-family="Arial, sans-serif" font-size="22" fill="#ffffff"
+      text-anchor="middle" font-weight="bold">Desired State</text>
+
+    <!-- Actual State Box -->
+    <rect x="90" y="50" width="180" height="80" rx="5" ry="5" fill="url(#neonBlueGradient)"
+      opacity="0.9" />
+    <text x="180" y="95" font-family="Arial, sans-serif" font-size="22" fill="#ffffff"
+      text-anchor="middle" font-weight="bold">Actual State</text>
+    <!-- Control Loop Circle -->
+    <g transform="translate(0,105)">
+      <!-- Main circle with pulsing animation -->
+      <circle cx="0" cy="0" r="75" fill="none" stroke="url(#neonBlueGradient)" stroke-width="25"
+        opacity="0.9">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="25;27;25" dur="3s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Three arrow segments in the circle -->
+      <!-- Observe segment with flow animation -->
+      <path d="M-65,-40 A75,75 0 0,1 65,-40" fill="none" stroke="#3a05ff" stroke-width="25">
+        <animate attributeName="stroke" values="#3a85ff;#6caeff;#1e90ff;#3a55ff" dur="4s" begin="0s"
+          repeatCount="indefinite" />
+      </path>
+      <text x="0" y="-65" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
+        text-anchor="middle" font-weight="bold">Observe</text>
+      <polygon points="63,-59 73,-42 53,-42" fill="#ffffff" transform="rotate(20,73,-69)">
+        <animate attributeName="fill" values="#ffffff;#1e90ff;#6caeff" dur="4s"
+          repeatCount="indefinite" />
+      </polygon>
+
+      <!-- Act segment with flow animation (delayed) -->
+      <path d="M65,-35 A75,75 0 0,1 0,75" fill="none" stroke="#ff7f50" stroke-width="25">
+        <animate attributeName="stroke" values="#ff7f50;#ffa07a;#ff6347;#ff7f50" dur="4s" begin="1.3s"
+          repeatCount="indefinite" />
+      </path>
+      <text x="15" y="75" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
+        text-anchor="middle" font-weight="bold" transform="rotate(-45)">Act</text>
+      <polygon points="18,73 0,70 16,58" fill="#ffffff" transform="rotate(110,8,71)">
+        <animate attributeName="fill" values="#ffffff;#ff6347;#ffa07a" dur="4s" begin="1.3s"
+          repeatCount="indefinite" />
+      </polygon>
+
+      <!-- Analyze segment with flow animation (delayed more) -->
+      <path d="M0,75 A75,75 0 0,1 -65,-35" fill="none" stroke="#32cd32" stroke-width="25">
+        <animate attributeName="stroke" values="#32cd32;#98fb98;#228b22;#32cd32" dur="4s" begin="2.6s"
+          repeatCount="indefinite" />
+      </path>
+      <text x="-10" y="72" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
+        text-anchor="middle" font-weight="bold" transform="rotate(49)">Analyze</text>
+      <polygon points="-83,-35 -65,-45 -83,-55" fill="#ffffff" transform="rotate(180,-73,-35)">
+        <animate attributeName="fill" values="#ffffff;#228b22;#98fb98" dur="4s" begin="2.6s"
+          repeatCount="indefinite" />
+      </polygon>
+    </g>
+
+    <!-- Path from Actual State to Desired State (over the circle) -->
+    <path d="M180,50 C180,-70 -180,-70 -180,50" id="topPath" stroke="#ffffff" stroke-width="2"
+      stroke-dasharray="5,3" fill="none" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Animated dot moving from Actual to Desired over the circle -->
+    <circle r="4" fill="#00ffff" filter="url(#glow)">
+      <animateMotion dur="2s" repeatCount="indefinite">
+        <mpath xlink:href="#topPath" />
+      </animateMotion>
+    </circle>
+
+    <!-- Path from Desired State to Actual State (under the circle) -->
+    <path d="M-180,130 C-180,280 180,280 180,130" id="bottomPath" stroke="#ffffff" stroke-width="2"
+      stroke-dasharray="5,3" fill="none" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="stroke" values="#ffffff;#00ffff;#ffffff" dur="5s"
+        repeatCount="indefinite" />
+    </path>
+
+    <!-- Animated dot moving from Desired to Actual under the circle -->
+    <circle r="4" fill="#00ffff" filter="url(#glow)">
+      <animateMotion dur="2s" repeatCount="indefinite">
+        <mpath xlink:href="#bottomPath" />
+      </animateMotion>
+    </circle>
+
+    <!-- Additional labels for clarity -->
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Feedback</text>
+    <text x="0" y="210" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+      text-anchor="middle">Correction</text>
+
+    <!-- Control Loop Title with subtle animation -->
+    <text x="0" y="-50" font-family="Arial, sans-serif" font-size="24" fill="#ffffff"
+      text-anchor="middle" font-weight="bold">Control Loop
+    </text>
+  </g>
+</svg>
