@@ -61,6 +61,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@agentico/mcp-intent-based": "file:../mcp-intent-based"
+    "@agentico/mcp-intent-based": "^0.1.0"
   }
 }
