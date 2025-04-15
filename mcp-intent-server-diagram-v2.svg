@@ -54,16 +54,19 @@
 
   <!-- Central MCP Server Component -->
   <g>
-    <rect x="300" y="100" width="200" height="120" rx="10" ry="10" fill="url(#neonBlueGradient)"
-      filter="url(#glow)" opacity="0.9">
-      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" />
-    </rect>
-    <text x="400" y="140" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
-      text-anchor="middle">MCP Server</text>
-    <text x="400" y="170" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
-      text-anchor="middle">Intent-Based Management</text>
-    <text x="400" y="190" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
-      text-anchor="middle">server.yaml</text>
+    <a xlink:href="https://github.com/agentico-dev/mcp/blob/main/mcp-intent-based-demo/server.yaml"
+      target="_blank">
+      <rect x="300" y="100" width="200" height="120" rx="10" ry="10" fill="url(#neonBlueGradient)"
+        filter="url(#glow)" opacity="0.9">
+        <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" />
+      </rect>
+      <text x="400" y="140" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
+        text-anchor="middle">MCP Server</text>
+      <text x="400" y="170" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
+        text-anchor="middle">Intent-Based Management</text>
+      <text x="400" y="190" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
+        text-anchor="middle">server.yaml</text>
+    </a>
   </g>
 
   <!-- Intent-Based Management (Kubernetes) -->
@@ -115,17 +118,18 @@
     <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#ffffff"
       text-anchor="middle">Java-like Reflection</text>
     <text x="90" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
-      text-anchor="middle">Dynamic Interfaces</text>
-    <text x="90" y="80" font-family="Arial, sans-serif" font-size="12" fill="#ffffff"
-      text-anchor="middle">&lt;T&gt; T create()</text>
+      text-anchor="middle">Dynamic Instances</text>
   </g>
 
   <!-- Dynamic Tool Creation - Fixed Filled Circle -->
   <g transform="translate(700, 200)">
-    <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
-      opacity="0.85">
-      <animate attributeName="r" values="48;52;48" dur="3s" repeatCount="indefinite" />
-    </circle>
+    <a xlink:href="https://github.com/agentico-dev/mcp/tree/main/mcp-intent-based-demo/src/tools"
+      target="_blank">
+      <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
+        opacity="0.85">
+        <animate attributeName="r" values="48;52;48" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </a>
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
       text-anchor="middle">Dynamic</text>
     <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
@@ -133,13 +137,13 @@
 
     <!-- Tool Icons -->
     <g transform="translate(-20, 20) scale(0.6)">
-      <path d="M0,0 L10,10 L0,20 L-10,10 Z" fill="#ffffff" >
+      <path d="M0,0 L10,10 L0,20 L-10,10 Z" fill="#ffffff">
         <animate attributeName="opacity" values="1;0.9;1" dur="2s" repeatCount="indefinite" />
       </path>
-      <path d="M20,0 L30,10 L20,20 L10,10 Z" fill="#ffffff" >
+      <path d="M20,0 L30,10 L20,20 L10,10 Z" fill="#ffffff">
         <animate attributeName="opacity" values="1;0.9;0.7;0.4;1" dur="2s" repeatCount="indefinite" />
       </path>
-      <path d="M40,0 L50,10 L40,20 L30,10 Z" fill="#ffffff" >
+      <path d="M40,0 L50,10 L40,20 L30,10 Z" fill="#ffffff">
         <animate attributeName="opacity" values="1;0.8;0.6;0.2;1" dur="2s" repeatCount="indefinite" />
       </path>
       <path d="M60,0 L70,10 L60,20 L50,10 Z" fill="#ffffff">
@@ -150,10 +154,13 @@
 
   <!-- Tools Output - Fixed Filled Circle -->
   <g transform="translate(100, 200)">
-    <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
-      opacity="0.85">
-      <animate attributeName="r" values="48;52;48" dur="2.5s" repeatCount="indefinite" />
-    </circle>
+    <a xlink:href="https://github.com/agentico-dev/mcp/tree/main/mcp-intent-based-demo/src/tools"
+      target="_blank">
+      <circle cx="0" cy="0" r="50" fill="url(#neonGreenGradient)" filter="url(#glow)"
+        opacity="0.85">
+        <animate attributeName="r" values="48;52;48" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+    </a>
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
       text-anchor="middle">Dynamic</text>
     <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" fill="#ffffff"
@@ -187,7 +194,7 @@
   <path d="M150,200 L300,170" id="toolLoadingPath" stroke="#0c6" stroke-width="2" fill="none">
     <animate attributeName="stroke-dasharray" values="2,4;4,2" dur="1.5s" repeatCount="indefinite" />
   </path>
-  
+
   <!-- Animated dot moving from Tool Loading to Server - One direction only -->
   <circle r="5" fill="#00ffff" filter="url(#glow)">
     <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
@@ -196,7 +203,7 @@
     <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
     <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
   </circle>
-  
+
   <!-- Second dot for continuous flow -->
   <circle r="5" fill="#00ffff" filter="url(#glow)">
     <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s">
@@ -210,7 +217,7 @@
   <path d="M650,200 L500,170" id="toolCreationPath" stroke="#0c6" stroke-width="2" fill="none">
     <animate attributeName="stroke-dasharray" values="2,4;4,2" dur="1.5s" repeatCount="indefinite" />
   </path>
-  
+
   <!-- Animated dot moving from Tool Creation to Server - One direction only -->
   <circle r="5" fill="#00ffff" filter="url(#glow)">
     <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s">
@@ -219,7 +226,7 @@
     <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
     <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
   </circle>
-  
+
   <!-- Second dot for continuous flow -->
   <circle r="5" fill="#00ffff" filter="url(#glow)">
     <animateMotion dur="3s" repeatCount="indefinite" begin="2s">
@@ -267,20 +274,27 @@
     <rect x="150" y="0" width="15" height="15" fill="url(#neonPurpleGradient)" />
     <text x="175" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Principles</text>
 
-    <rect x="260" y="0" width="15" height="15" fill="url(#neonGreenGradient)" />
-    <text x="285" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Tools</text>
+
+    <a xlink:href="https://github.com/agentico-dev/mcp/tree/main/mcp-intent-based-demo/src/tools"
+      target="_blank">
+      <rect x="260" y="0" width="15" height="15" fill="url(#neonGreenGradient)" />
+      <text x="285" y="12" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Tools</text>
+    </a>
   </g>
 
   <!-- TypeScript Code Snippet -->
   <!-- <g transform="translate(490, 400)">
     <rect x="0" y="0" width="250" height="80" rx="5" ry="5" fill="#151530" stroke="#00ffff"
       stroke-width="1" />
-    <text x="5" y="10" font-family="Courier, monospace" font-size="12" fill="#00ffff">export default const myToolFn = </text>
-    <text x="15" y="25" font-family="Courier, monospace" font-size="12" fill="#00ffff">(tool: Tool) =&gt; {</text>
+    <text x="5" y="10" font-family="Courier, monospace" font-size="12" fill="#00ffff">export default
+  const myToolFn = </text>
+    <text x="15" y="25" font-family="Courier, monospace" font-size="12" fill="#00ffff">(tool: Tool)
+  =&gt; {</text>
     <text x="25" y="40" font-family="Courier, monospace" font-size="12" fill="#00ffff"> // Tool
       implementation</text>
     <text x="10" y="55" font-family="Courier, monospace" font-size="12" fill="#00ffff">};</text>
-    <text x="10" y="70" font-family="Courier, monospace" font-size="12" fill="#00ffff"> export { myToolFn }</text>
+    <text x="10" y="70" font-family="Courier, monospace" font-size="12" fill="#00ffff"> export {
+  myToolFn }</text>
   </g> -->
 
   <!-- Control Loop Diagram (Similar to attached) -->
@@ -324,7 +338,8 @@
 
       <!-- Act segment with flow animation (delayed) -->
       <path d="M65,-35 A75,75 0 0,1 0,75" fill="none" stroke="#ff7f50" stroke-width="25">
-        <animate attributeName="stroke" values="#ff7f50;#ffa07a;#ff6347;#ff7f50" dur="4s" begin="1.3s"
+        <animate attributeName="stroke" values="#ff7f50;#ffa07a;#ff6347;#ff7f50" dur="4s"
+          begin="1.3s"
           repeatCount="indefinite" />
       </path>
       <text x="15" y="75" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"
@@ -336,7 +351,8 @@
 
       <!-- Analyze segment with flow animation (delayed more) -->
       <path d="M0,75 A75,75 0 0,1 -65,-35" fill="none" stroke="#32cd32" stroke-width="25">
-        <animate attributeName="stroke" values="#32cd32;#98fb98;#228b22;#32cd32" dur="4s" begin="2.6s"
+        <animate attributeName="stroke" values="#32cd32;#98fb98;#228b22;#32cd32" dur="4s"
+          begin="2.6s"
           repeatCount="indefinite" />
       </path>
       <text x="-10" y="72" font-family="Arial, sans-serif" font-size="18" fill="#ffffff"

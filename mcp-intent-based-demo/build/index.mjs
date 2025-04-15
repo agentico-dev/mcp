@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+import j from"@agentico/mcp-intent-based";process.on("SIGINT",()=>{console.log("Aborted, process interrupted."),process.exit(0)});async function k(){let f=await j();if(f){if("sendLoggingMessage"in f)f.sendLoggingMessage({level:"info",data:"Server started!"})}else console.error("Error starting server"),process.exit(1)}k().catch((f)=>{console.error("Error starting server:",f),process.exit(1)});

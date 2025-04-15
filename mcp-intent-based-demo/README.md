@@ -98,9 +98,11 @@ startServer().catch((error) => {
 
 To start the server:
 
+**NOTE: Make sure you add the `tools` path to the `TOOLS_PATH` environment variable, so that the server can find the tools.**
+
 ```bash
 npm run build
-npm run inspector
+TOOLS_PATH=$PWD/build/tools npm run inspector
 # or
 yarn build
 yarn inspector
