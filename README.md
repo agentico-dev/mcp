@@ -2,9 +2,10 @@
 
 This is an early version of the MCP Intent-Based demo project. This project aims to demonstrate how to create and manage a flexible, dynamic server environment using a declarative manifest approach. Please note that this is a work in progress and may not be fully functional or stable. We welcome [feedback](https://go.rebelion.la/contact-us) to improve the project.
 
-For more details check the `mcp-intent-based-demo` [README here](./mcp-intent-based-demo/README.md).
+For more details and examples, please check the `mcp-intent-based-demo` [README here](./mcp-intent-based-demo/README.md).
 
-![MCP Intent Based Server and Tools](./mcp-intent-server-diagram-v2.svg)
+<!-- local didn't work, so, using the whole URL to raw file -->
+![MCP Intent Based Server and Tools](https://raw.githubusercontent.com/agentico-dev/mcp/refs/heads/main/mcp-intent-server-diagram-v2.svg)
 
 ## Understanding the Intent-Based Manifest File
 
@@ -20,10 +21,13 @@ metadata:
   capabilities:
     - logging
     - tools
+    #- telemetry # future: 🔭
+  # future: the intent would allow to define the tools path - for now, needs to be set in the env var
+  #toolsPath: ./build/tools 
 spec:
   template:
     metadata:
-      scope: local
+      scope: local  # future: cloud as well ☁️
     spec:
       tools:
         - name: echo
@@ -44,9 +48,9 @@ The entry point of the application (`index.ts`) is **remarkably simple**:
 import createServerFromFile from "@agentico/mcp-intent-based";
 
 async function startServer() {
-  // either instance of Server or McpServer
   const server = await createServerFromFile();
-  // Yes, that's all you need to do to start the server with Agentico and Intent Base AI!!
+  // Yes, that's all you need to do to start the server with Agentico and Intent Based AI!!
+  // server.yaml dictates the tools to be created
 }
 
 startServer().catch((error) => {
@@ -59,6 +63,17 @@ startServer().catch((error) => {
 
 To start the server:
 
+We have prepared a script in the `package.json` file for you to run the demo with inspector.
+
+```bash
+npm run agentico
+# or
+yarn agentico
+```
+If you are using the default parameters, the MCP Inspector will be available at http://127.0.0.1:6274
+
+If you want to do it manually, you can run the following commands:
+
 **NOTE: Make sure you add the `tools` path to the `TOOLS_PATH` environment variable, so that the server can find the tools.**
 
 ```bash
@@ -66,7 +81,7 @@ npm run build
 TOOLS_PATH=$PWD/build/tools npm run inspector
 # or
 yarn build
-yarn inspector
+TOOLS_PATH=$PWD/build/tools yarn inspector
 ```
 
 ## Next Steps

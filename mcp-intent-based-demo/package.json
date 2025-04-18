@@ -1,7 +1,12 @@
 {
-  "name": "mcp-intent-based-demo",
-  "version": "1.0.0",
+  "name": "@agentico/mcp-intent-based-demo",
+  "version": "1.1.0",
   "main": "index.js",
+  "homepage": "https://agentico.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentico-dev/mcp"
+  },
   "keywords": [
     "mcp",
     "intent",
@@ -17,7 +22,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "ib-demo": "./build/index.js"
+    "agentico-demo": "build/index.js"
   },
   "files": [
     "build",
@@ -31,11 +36,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
-    "buildup": "bunup",
     "watch": "tsc --watch",
-    "prepublishOnly": "bunup && npm run build",
+    "prepublish": "bunup && npm run build",
+    "prepare": "agentico --copy-schemas",
     "publish:npm": "npm publish --access public",
-    "inspector": "npx @modelcontextprotocol/inspector@0.8.2 build/index.js"
+    "inspector": "npx @modelcontextprotocol/inspector@0.8.2 build/index.js",
+    "agentico": "npm run prepublish && npm run prepare && TOOLS_PATH=$PWD/build/tools npm run inspector"
   },
   "contributors": [
     {
@@ -61,6 +67,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@agentico/mcp-intent-based": "^0.1.0"
+    "@agentico/mcp-intent-based": "^0.2.0"
   }
 }

@@ -1,4 +1,4 @@
-# Getting Started with MCP Intent Based Demo
+# MCP Intent Based Demo
 
 This is an early version of the MCP Intent-Based demo project. The goal of this project is to demonstrate how to create and manage a flexible, dynamic server environment using a declarative manifest approach. Please note that this is a work in progress and may not be fully functional or stable. We welcome [feedback](https://go.rebelion.la/contact-us) to improve the project.
 
@@ -15,21 +15,58 @@ The demo consists of these key files:
 
 - `server.yaml`: The manifest file that defines the server configuration
 - `src/index.ts`: The entry point that initializes the server
-- Various tool implementations in the project directory
-- `src/tools`: Directory containing tool implementations - one for each tool,
-  - `echo.ts`: A tool that echoes back the input
-  - `reverse.ts`: A tool that reverses the input string
-  - `uppercase.ts`: A tool that converts the input string to uppercase
+- Various tool implementations as examples in the project directory
+- `src/tools/{TOOL_NAME}`: Directory containing tool implementations - one for each tool:
+  - `echo`: A tool that echoes back the input
+  - `reverse`: A tool that reverses the input string
+  - `uppercase`: A tool that converts the input string to uppercase
+  - Each tool directory MUST contain:
+    - `index.ts`: The TypeScript file for the tool implementation - MUST be named `index.ts`
+    - `schema.json`: The schema definition for the tool
 - `package.json`: The project configuration file
 
-## Step 1: Clone the Repository
+```bash
+# tree of source directory
+src/
+├── index.ts  <-- Entry point for the server
+└── tools  <-- Directory containing tool implementations
+    ├── echo            <-- Tool that echoes back the input
+    │   ├── index.ts    <-- Tool implementation
+    │   └── schema.json <-- Tool schema definition
+    ├── reverse         <-- Tool that reverses the input string
+    │   └── index.ts    <-- On porpose, doesn't have a schema.json; inline with the code
+    └── uppercase       <-- Tool that converts the input string to uppercase
+        ├── index.ts
+        └── schema.json
+server.yaml  <-- Manifest file with server intent definition
+```
+
+**NOTE**: Since TypeScript doesn't copy non-TypeScript files by default, you'll need to add a step to your build process to copy the `schema.json` files from the `src/tools/{TOOL_NAME}` directories to the `build/tools/{TOOL_NAME}` directories. You can do this using a script in your `package.json`:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "prepare": "agentico --copy-schemas",
+  }
+}
+```
+
+Agentico provides a tool to facilitate this process. The `--copy-schemas` option will copy the `schema.json` files from the `src/tools/{TOOL_NAME}` directories to the `build/tools/{TOOL_NAME}` directories.
+`prepare` runs automatically when you install or publish the package and runs AFTER "prepublish".
+
+This will ensure that the `schema.json` files are copied to the `build/tools` directory after the TypeScript compilation.
+
+## Getting Started
+
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/agentico-dev/mcp.git
 cd mcp/mcp-intent-based-demo
 ```
 
-## Step 2: Install Dependencies
+### Step 2: Install Dependencies
 
 ```bash
 npm install
@@ -37,7 +74,7 @@ npm install
 yarn install
 ```
 
-## Step 3: Understanding the Manifest File
+### Step 3: Understanding the Manifest File
 
 The `server.yaml` file is the heart of the MCP Intent Based approach. It defines:
 
@@ -71,7 +108,7 @@ This file specifies:
 - Enabled capabilities
 - Tools to be dynamically created
 
-## Step 4: Understanding the Server Initialization
+### Step 4: Understanding the Server Initialization
 
 The entry point of the application (`index.ts`) is remarkably simple:
 
@@ -81,9 +118,9 @@ The entry point of the application (`index.ts`) is remarkably simple:
 import createServerFromFile from "@agentico/mcp-intent-based";
 
 async function startServer() {
-  // either instance of Server or McpServer
   const server = await createServerFromFile();
-  // Yes, that's all you need to do to start the server with Agentico and Intent Base AI!!
+  // Yes, that's all you need to do to start the server with Agentico and Intent Based AI!!
+  // server.yaml dictates the tools to be created
 }
 
 startServer().catch((error) => {
@@ -94,9 +131,20 @@ startServer().catch((error) => {
 
 🪄 The magic happens with a single call to `createServerFromFile()`, which reads the manifest file and dynamically sets up the entire server environment!!
 
-## Step 5: Running the Demo
+### Step 5: Running the Demo
 
 To start the server:
+
+We have prepared a script in the `package.json` file for you to run the demo with inspector.
+
+```bash
+npm run agentico
+# or
+yarn agentico
+```
+If you are using the default parameters, the MCP Inspector will be available at http://127.0.0.1:6274
+
+If you want to do it manually, you can run the following commands:
 
 **NOTE: Make sure you add the `tools` path to the `TOOLS_PATH` environment variable, so that the server can find the tools.**
 
@@ -105,12 +153,12 @@ npm run build
 TOOLS_PATH=$PWD/build/tools npm run inspector
 # or
 yarn build
-yarn inspector
+TOOLS_PATH=$PWD/build/tools yarn inspector
 ```
 
 You should see output indicating that the server has started successfully.
 
-## Step 6: Testing the Tools
+### Step 6: Testing the Tools
 
 The demo includes three tools:
 
@@ -133,7 +181,7 @@ Example interaction:
 < {"output": "HELLO, MCP INTENT BASED SERVER!"}
 ```
 
-## Step 7: Extending the Demo
+### Step 7: Extending the Demo
 
 You can extend this demo by:
 
@@ -168,8 +216,10 @@ The power of this approach comes from:
 
 ## Next Steps
 
+- Dive into the source code to understand how the server and tools are implemented
 - Explore the MCP Intent Based Server documentation for more advanced features
 - Try creating your own custom tools and incorporate them into the manifest
 - Experiment with different transport types
+- Explore the available logging capabilities for better insights
 
 For more information, visit the [MCP Intent Based Server and Tools documentation](https://agentico.dev/docs/mcp-intent-based).
